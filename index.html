@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&family=Stick+No+Bills:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/Exam.css">
+</head>
+<body class="bg-dark">
+
+<!-- Loading Screen -->
+
+
+
+<div id="load_screen" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black d-flex justify-content-center align-items-center">
+    <i class="fa fa-spinner fa-spin fa-5x"></i>
+</div>
+
+
+   <!---------------- Navbar ------------------>
+   <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0">
+    <div class="nav-tab  d-flex flex-column justify-content-between min-vh-100 p-4">
+        <div class="links">
+            <ul class="list-unstyled overflow-hidden">
+                <li onclick="showSerchSection();closeSideNav()" class="py-2 position-relative cursor-pointer">Search</li>
+                <li onclick="showCategory(); closeSideNav()" class="py-2 position-relative cursor-pointer">Categories</li>
+                <li onclick="showArea(); closeSideNav()" class="py-2 position-relative cursor-pointer">Area</li>
+                <li onclick="showindecatorsList(); closeSideNav()" class="py-2 position-relative cursor-pointer">Ingredients</li>
+                <li onclick="showContacts(); closeSideNav()" class="py-2 position-relative cursor-pointer">Contact Us</li>
+            </ul>
+        </div>
+        <div class="nav-footer">
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="footer">
+                <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
+        <img class="logo" src="./images/logo.png" alt="" srcset="">
+        <i class="fa-solid open-close-icon fa-align-justify fa-2x text-dark"></i>
+        <div>
+            <i class="fa-solid fa-globe d-block text-dark"></i>
+            <i class="fa-solid fa-share-nodes text-dark "></i>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+   <!-- Home Section -->
+
+ <div id="home" class="container">
+     <div id="rowBody" class="row p-2 ">
+
+
+     </div>
+ </div>
+
+ <div id="mealDeatails" class="mealDeatails d-none">
+  <div id="detBody" class="row pt-4 text-white">
+ 
+  </div>
+ </div>
+
+
+ <!-- Serch Area --> 
+ <div id="searchByCat" class="searchByCat d-none mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3"><input onkeyup="serarchByName(this.value)" class="form-control" id="searchByCat" type="text" placeholder="Search By category"></div>
+            <div class="col-md-6"> <input onkeyup="searchByFirstletter(this.value)" class="form-control" id="searchByLetter" type="text" placeholder="Search By First Letter"></div>
+            
+           
+        </div>
+        <div id="SearchBody" class="row pt-4 text-white">
+     
+        </div>
+    </div>
+ </div>
+
+ <!-- Category  -->
+
+ <div id="category" class=" d-none">
+    <div class="container">
+        <div id="categoryBody" class="row p-2 ">
+
+
+        </div>
+    </div>
+  
+</div>
+
+
+<!-- Area -->
+<div id="Area" class=" d-none">
+    <div class="container">
+        <div id="AreaBody" class="row p-2 ">
+
+
+        </div>
+    </div>
+   
+</div>
+
+
+
+
+<!-- indecators -->
+
+<div id="Ingredients" class=" d-none">
+    <div class="container">
+        <div id="IngredientsBody" class="row p-2 ">
+
+
+        </div>
+    </div>
+   
+</div>
+
+
+<div id="generalDisplay" class="row p-2 text-white">
+
+
+</div>
+
+
+
+<div id="contact" class="contact min-vh-100 d-flex justify-content-center align-items-center d-none">
+    <div class="container w-75 text-center">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <input id="nameInput" onkeyup="inputsValidation()" type="text" class="form-control" placeholder="Enter Your Name">
+                <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Special characters and numbers not allowed
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="emailInput" onkeyup="inputsValidation()" type="email" class="form-control " placeholder="Enter Your Email">
+                <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Email not valid *exemple@yyy.zzz
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="phoneInput" onkeyup="inputsValidation()" type="text" class="form-control " placeholder="Enter Your Phone">
+                <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid Phone Number
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="ageInput" onkeyup="inputsValidation()" type="number" class="form-control " placeholder="Enter Your Age">
+                <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid age
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input  id="passwordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Enter Your Password">
+                <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid password *Minimum eight characters, at least one letter and one number:*
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input  id="repasswordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+                <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid repassword 
+                </div>
+            </div>
+        </div>
+        <button id="submitBtn" disabled class="btn btn-outline-danger px-2 mt-3">Submit</button>
+    </div>
+</div> 
+
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/Exam.js"></script>
+</body>
+</html>
